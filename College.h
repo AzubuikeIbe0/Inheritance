@@ -9,15 +9,17 @@ private:
 	string Name;
 	string Address;
 	int StudentCount;
+	int CourseCount;
 	list<string>Course;
 public:
 	~College();
 	void GetInfo();
 	void Register();
+	void Graduate();
 	void GetTranscript();
 	void CreateCourse(string title);
 
-	College(string name, string address, int studentcount, list<string> course);
+	College(string name, string address);
 
 };
 

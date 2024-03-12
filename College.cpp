@@ -1,24 +1,35 @@
 #include "College.h"
 
-College::College(string name, string address, int studentcount, list<string> course)
+College::College(string name, string address)
 {
-	name = Name;
-	address = Address;
-	studentcount = StudentCount;
-	course = Course;
+	Name=name;
+	Address=address;
+
 }
 
 
 void College::GetInfo() {
-	cout << "Name" << Name << endl;
-	cout << "Address" << Address << endl;
-	cout << "Population" << StudentCount << endl;
-	//cout << "Course" << Course << endl;
+	cout << "Name: " << Name << endl;
+	cout << "Address: " << Address << endl;
+	cout << "Population: " << StudentCount << endl;
+	cout << "Course Count: " << CourseCount << endl;
+	cout << "Course: ";
+	for (string coursetitles : Course)
+	{
+		cout << coursetitles << ", ";
+	}
+
+	cout << endl;
 }
 
 void College::Register(){
-	cout << "New student registered" << endl;
+	StudentCount++;
 }
+
+void College::Graduate() {
+	StudentCount--;
+}
+
 
 void College::GetTranscript(){
 	cout << "Transcript recieved" << endl;
@@ -26,6 +37,7 @@ void College::GetTranscript(){
 
 void College::CreateCourse(string title) {
 	Course.push_back(title);
+	CourseCount++;
 }
 
 College::~College(){}
